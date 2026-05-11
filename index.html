@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vibe Chat AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+
+    <div class="app">
+      <header class="app-header">
+        <div class="brand">
+          <h1>Vibe Chat AI</h1>
+          <p class="subtle">Local demo chat inspired by ChatGPT.</p>
+        </div>
+        <div class="api-key">
+          <label for="apiKey">API Key</label>
+          <input
+            id="apiKey"
+            type="password"
+            placeholder="Paste your key here"
+            autocomplete="off"
+          />
+        </div>
+      </header>
+
+      <div class="tabs" role="tablist" aria-label="Mode">
+        <button
+          id="chatTabBtn"
+          class="tab active"
+          type="button"
+          role="tab"
+          aria-selected="true"
+        >
+          Chat
+        </button>
+        <button
+          id="imageTabBtn"
+          class="tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+        >
+          Image
+        </button>
+      </div>
+
+      <section id="chatSection" class="chat-section">
+        <main class="chat" aria-live="polite">
+          <div id="messages" class="messages"></div>
+          <div id="typing" class="typing hidden">Assistant is typing...</div>
+        </main>
+
+        <footer class="composer">
+          <textarea
+            id="userInput"
+            rows="2"
+            placeholder="Type a message..."
+          ></textarea>
+          <div class="actions">
+            <button id="sendBtn" class="primary" type="button">Send</button>
+            <button id="clearBtn" class="ghost" type="button">
+              Clear Chat
+            </button>
+          </div>
+        </footer>
+      </section>
+
+      <section id="imageSection" class="image-section hidden">
+        <div class="image-panel">
+          <label class="image-label" for="imagePrompt">Image Prompt</label>
+          <div class="image-context">
+            <span id="imageContextStatus" class="context-status"
+              >Image context: Empty</span
+            >
+            <button id="resetImageContextBtn" class="ghost" type="button">
+              Reset Image Context
+            </button>
+          </div>
+          <p class="image-note">
+            To keep the same person/object, generate the first image, then write
+            edits like: "same person, change clothes/background/expression".
+          </p>
+          <textarea
+            id="imagePrompt"
+            rows="3"
+            placeholder="Create a realistic portrait of a young man with curly hair, cinematic lighting"
+          ></textarea>
+          <div class="image-actions">
+            <button id="generateImageBtn" class="primary" type="button">
+              Generate Image
+            </button>
+          </div>
+          <div id="imageLoading" class="typing hidden">Generating image...</div>
+          <div id="imageError" class="image-error hidden" role="alert"></div>
+          <div id="imageResult" class="image-result"></div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
