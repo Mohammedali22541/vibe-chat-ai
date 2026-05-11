@@ -1,5 +1,7 @@
 # Vibe Chat AI
 
+🔗 **Live Demo:** [Vibe Chat AI](https://mohammedali22541.github.io/vibe-chat-ai/)
+
 A simple ChatGPT-like web app built with only HTML, CSS, and vanilla JavaScript. It supports:
 
 - Text chat using Fireworks Chat Completions
@@ -94,54 +96,10 @@ POST https://api.fireworks.ai/inference/v1/workflows/accounts/fireworks/models/f
 
 ## File Structure
 
-```
+```text
 Vibe-Chat-AI/
 ├── index.html
 ├── style.css
 ├── script.js
 ├── README.md
 └── .gitignore
-```
-
-## Security Warning
-
-- Never hardcode a real API key in `script.js`.
-- Never commit API keys to GitHub.
-- If an API key is leaked, delete or rotate it immediately in the Fireworks dashboard.
-- This project is for local demo and testing only.
-
-## Limitations
-
-- No backend.
-- No database.
-- Chat history disappears after refresh.
-- Image context disappears after refresh.
-- API key is exposed in browser memory during local testing.
-- Fireworks rate limits may stop image generation temporarily.
-- Image consistency depends on the model.
-
-## Future Improvements
-
-- Add backend using ASP.NET Core.
-- Store API key server-side.
-- Add user authentication.
-- Store chat sessions in database.
-- Add streaming chat responses.
-- Add image gallery.
-- Add download image button.
-- Add deployable serverless API proxy.
-- Add dark mode.
-
-## Example Prompts
-
-### Chat
-
-"Explain Web API in .NET"
-
-### Image first prompt
-
-"Create a realistic portrait of a cat, cinematic lighting"
-
-### Image edit prompt
-
-"same cat with sunglasses"
